@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles/vendor/bootstrap.min.css') }}">
+    <link rel="stylesheet" 
+          href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" 
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" 
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles/main.css') }}">
+  </head>
+  <body>
+    <header></header>
+
+    <main class="container-fluid">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline">
+          <li class="text-muted">WNGC Horses &copy; 2019</li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts/vendor/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/vendor/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/vendor/list.min.js') }}"></script>
+    {% block script %}{% endblock %}
+  </body>
+</html>
